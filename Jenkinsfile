@@ -21,7 +21,7 @@ node('linux'){
     stage('Reports'){
     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '886a4182-98c4-4bab-8549-cbe66191fb5c', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
     // some block
-        sh 'aws cloudformation describe-stack-resources --stack-name jenkins --region us-east-1' 
+        sh 'aws cloudformation describe-stack-resources --stack-name jenkins2 --region us-east-1' 
           }
         }
 }
