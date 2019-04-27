@@ -12,6 +12,8 @@ node('linux'){
         sh "ant -f build.xml -v"
     }
      stage('Deploy'){
+          withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '886a4182-98c4-4bab-8549-cbe66191fb5c', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+    // some block
         sh "Aws s3 cp *.jar s3//kehindek-assignment-4/rectangle-{BUILD_NUMBER}.jar"
     }
     
