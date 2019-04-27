@@ -14,7 +14,7 @@ node('linux'){
      stage('Deploy'){
           withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: '886a4182-98c4-4bab-8549-cbe66191fb5c', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
     // some block
-        sh "aws s3 cp /workspace/java-pipeline/dist/rectangle-18.jar s3//kehindek-assignment-4"
+        sh "aws s3 cp /workspace/java-pipeline/dist/rectangle-* s3//kehindek-assignment-4/"
        }
      }
     
